@@ -1,10 +1,21 @@
 
 import React from "react";
-
+import Masonry from "react-masonry-css";
+const breakpointColumnsObj = {
+  default: 4,
+  1100: 3,
+  700: 2,
+  500: 1
+};
 
 export default ({ results }) => (
     
   <>
+  <Masonry
+      breakpointCols={breakpointColumnsObj}
+      className="my-masonry-grid"
+      columnClassName="my-masonry-grid_column"
+    >
       {results.map(gif => (
         <a href={gif.url} 
         target="_blank"
@@ -19,7 +30,7 @@ export default ({ results }) => (
           />
         </a>
       ))}
-
+  </Masonry>
   </>
 
 
